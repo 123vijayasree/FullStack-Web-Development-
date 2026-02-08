@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Learning Platform</title>
+
+<style>
+/* ===============================
+   ELEMENT SELECTOR
+================================ */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #0b1120;
+  color: #e5e7eb;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+/* ===============================
+   GROUP SELECTOR
+================================ */
+a, button {
+  font-weight: 500;
+}
+
+/* ===============================
+   ID SELECTOR + POSITIONING
+================================ */
+#navbar {
+  position: sticky;
+  top: 0;
+  background-color: #020617;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+/* ===============================
+   NAV LINKS – CLASS SELECTOR
+================================ */
+.nav-links a {
+  color: #c7d2fe;
+  margin-left: 20px;
+  text-decoration: none;
+  padding-bottom: 4px;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #818cf8;
+}
+
+/* ===============================
+   HERO – FLEXBOX
+================================ */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 40px;
+  gap: 40px;
+  flex-wrap: wrap;
+  background-image: linear-gradient(
+      rgba(2,6,23,0.85),
+      rgba(2,6,23,0.85)
+    ),
+    url("https://images.unsplash.com/photo-1519389950473-47ba0277781c");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-text {
+  max-width: 520px;
+}
+
+.hero-text h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.hero-text span {
+  color: #818cf8;
+}
+
+.hero-text button {
+  margin-top: 25px;
+  padding: 12px 28px;
+  background-color: #6366f1;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+/* ===============================
+   COURSES – CSS GRID
+================================ */
+.courses {
+  padding: 60px 40px;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.course-card {
+  background-color: #020617;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #1e293b;
+  box-sizing: border-box;
+}
+
+.course-card a {
+  color: #a6b4fc;
+  text-decoration: none;
+}
+
+.course-card a:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* ===============================
+   COURSE DETAIL – ELABORATED
+================================ */
+.course-detail {
+  padding: 70px 40px;
+  background-image: linear-gradient(
+      rgba(2,6,23,0.9),
+      rgba(2,6,23,0.9)
+    ),
+    url("https://images.unsplash.com/photo-1555066931-4365d14bab8c");
+  background-size: cover;
+  background-position: center;
+}
+
+.detail-box {
+  max-width: 750px;
+  background-color: #020617;
+  padding: 35px;
+  border-radius: 12px;
+}
+
+.detail-box ul {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+/* ===============================
+   LOGIN SECTION
+================================ */
+.login {
+  padding: 60px 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.login-box {
+  background-color: #020617;
+  padding: 30px;
+  width: 300px;
+  border-radius: 10px;
+}
+
+.login-box input {
+  width: 100%;
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #0b1120;
+  border: 1px solid #1e293b;
+  color: white;
+}
+
+/* ===============================
+   CONTACT SECTION
+================================ */
+.contact {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.contact p {
+  margin-top: 10px;
+}
+
+/* ===============================
+   FOOTER – GROUP SELECTOR
+================================ */
+footer, .footer-text {
+  text-align: center;
+  padding: 20px;
+  background-color: #020617;
+  color: #94a3b8;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 600px) {
+  .hero {
+    text-align: center;
+  }
+
+  #navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <h2>E-Learn</h2>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#courses">Courses</a>
+    <a href="#details">Course Detail</a>
+    <a href="#contact">Contact</a>
+    <a href="#login">Login</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-text">
+    <h1>Learn <span>Anytime</span>, Anywhere</h1>
+    <p>Premium e-learning platform for modern students.</p>
+    <a href="#courses"><button>Explore Courses</button></a>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section class="courses" id="courses">
+  <h2>Popular Courses</h2>
+
+  <div class="course-grid">
+    <div class="course-card">
+      <h3>HTML & CSS</h3>
+      <p>Website design fundamentals</p>
+      <a href="#details">View Details</a>
+    </div>
+
+    <div class="course-card">
+      <h3>JavaScript</h3>
+      <p>Interactive web development</p>
+      <a href="#details">View Details</a>
+    </div>
+
+    <div class="course-card">
+      <h3>Python</h3>
+      <p>Beginner to advanced</p>
+      <a href="#details">View Details</a>
+    </div>
+  </div>
+</section>
+
+<!-- COURSE DETAIL -->
+<section class="course-detail" id="details">
+  <div class="detail-box">
+    <h2>Course Details</h2>
+    <p>This course provides complete training with hands-on practice.</p>
+    <ul>
+      <li>Duration: 3 Months</li>
+      <li>Mode: Online</li>
+      <li>Projects Included</li>
+      <li>Certificate on Completion</li>
+      <li>Career Guidance</li>
+    </ul>
+  </div>
+</section>
+
+<!-- LOGIN -->
+<style>
+.login {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+.login-box {
+  background-color: #111827;
+  padding: 30px;
+  width: 300px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.login-box h3 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: none;
+}
+
+.login-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.login-btn button {
+  padding: 10px 30px;
+  background-color: #6366f1;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.login-btn button:hover {
+  background-color: #4f46e5;
+}
+</style>
+
+<section class="login" id="login">
+  <div class="login-box">
+    <h3>Student Login</h3>
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <div class="login-btn">
+      <button>Login</button>
+    </div>
+  </div>
+</section>
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: support@elearn.com</p>
+  <p>Phone: +91 11056 11056</p>
+  <p>Address: Chennai 600-001</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-text">© 2026 E-Learn Platform</p>
+  <p><em style="color:#a6b4fc;">“Learn today, Lead tomorrow.”</em> </p>
+</footer>
+
+</body>
+</html>
